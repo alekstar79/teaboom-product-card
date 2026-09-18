@@ -1,0 +1,115 @@
+@layer components {
+  .cart-toast {
+    position: fixed;
+    right: var(--sp-6);
+    bottom: var(--sp-6);
+    z-index: 200;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: var(--sp-4);
+
+    width: min(400px, calc(100vw - 2 * var(--sp-6)));
+    padding: var(--sp-4);
+
+    background: var(--c-green-light);
+    border: 1px solid var(--c-green-border);
+    border-radius: var(--radius-md);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .12);
+
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(16px);
+
+    transition: opacity var(--tr-base), transform var(--tr-base);
+
+    /* Атрибут hidden защищает от мигания до загрузки стилей */
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  .cart-toast.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .cart-toast__image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    background: #fff;
+  }
+
+  .cart-toast__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+    min-width: 0;
+  }
+
+  .cart-toast__title {
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    line-height: var(--lh-tight);
+    color: var(--c-text);
+  }
+
+  .cart-toast__message {
+    font-size: var(--fs-xs);
+    color: var(--c-text-muted);
+  }
+
+  .cart-toast__link {
+    align-self: flex-start;
+    margin-top: var(--sp-1);
+    padding: var(--sp-2) var(--sp-4);
+
+    background: var(--c-yellow);
+    color: var(--c-text);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+    border-radius: var(--radius-sm);
+
+    transition: background-color var(--tr-fast);
+
+    &:hover {
+      background: #e0b40f;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--c-green);
+      outline-offset: 2px;
+    }
+  }
+
+  .cart-toast__close {
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: none;
+    border: 0;
+    color: var(--c-text-muted);
+    cursor: pointer;
+
+    transition: color var(--tr-fast);
+
+    &:hover {
+      color: var(--c-text);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--c-green);
+      outline-offset: 2px;
+      border-radius: var(--radius-sm);
+    }
+  }
+}

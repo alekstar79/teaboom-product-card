@@ -1,0 +1,108 @@
+@layer components {
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--sp-8);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity var(--tr-slow);
+
+    /**
+     * Атрибут hidden скрывает модалку до загрузки CSS,
+     * чтобы при перезагрузке страницы она не мигнула.
+     */
+    &[hidden] {
+      display: none;
+    }
+
+    &.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  .lightbox__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .85);
+    border: 0;
+    cursor: zoom-out;
+  }
+
+  .lightbox__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-4);
+    max-width: min(90vw, 900px);
+    max-height: 90vh;
+
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity var(--tr-slow), transform var(--tr-slow);
+  }
+
+  .lightbox.is-open .lightbox__content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .lightbox__image {
+    max-width: 100%;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    background: #fff;
+  }
+
+  .lightbox__caption {
+    color: #fff;
+    font-size: var(--fs-md);
+    text-align: center;
+  }
+
+  .lightbox__close {
+    position: fixed;
+    top: var(--sp-6);
+    right: var(--sp-6);
+    z-index: 2;
+
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, .1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, .3);
+    border-radius: 50%;
+    cursor: pointer;
+
+    transition: background-color var(--tr-fast), border-color var(--tr-fast);
+
+    &:hover {
+      background: rgba(255, 255, 255, .2);
+      border-color: rgba(255, 255, 255, .5);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+  }
+
+  body.is-modal-open {
+    overflow: hidden;
+  }
+}

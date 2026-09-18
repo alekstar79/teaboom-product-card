@@ -1,0 +1,26 @@
+@layer base {
+  body {
+    background-color: var(--c-bg);
+    background-image: url('../assets/images/bg-pattern.png');
+    background-repeat: repeat;
+    background-position: top left;
+    background-attachment: scroll;
+  }
+
+  .container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-pad);
+  }
+
+  .page {
+    padding: var(--sp-6) 0 var(--sp-12);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--c-green);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+}

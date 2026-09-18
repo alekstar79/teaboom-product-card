@@ -1,0 +1,44 @@
+{
+  "name": "@alekstar79/teaboom-product-card",
+  "description": "Карточка товара Teaboom.ru на чистом HTML/CSS/JS",
+  "author": "Aleksey Tarasenko <alekstar79@yandex.ru>",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alekstar79/teaboom-product-card.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alekstar79/teaboom-product-card/issues"
+  },
+  "homepage": "https://github.com/alekstar79/teaboom-product-card#readme",
+  "keywords": [
+    "html5",
+    "scss",
+    "vanilla-js",
+    "es-modules",
+    "css-grid",
+    "container-queries",
+    "cascade-layers",
+    "product-card",
+    "e-commerce",
+    "teaboom"
+  ],
+  "scripts": {
+    "sass": "sass scss/style.scss css/style.css --style=expanded",
+    "sass:watch": "sass --watch scss/style.scss css/style.css --style=expanded",
+    "serve": "serve ."
+  },
+  "devDependencies": {
+    "sass": "^1.77.0",
+    "serve": "^14.2.6"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,56 @@
+@layer components {
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--sp-2);
+
+    padding: var(--sp-3) var(--sp-6);
+
+    font-family: inherit;
+    font-size: var(--fs-md);
+    font-weight: 600;
+    line-height: 1;
+
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+
+    transition:
+      background-color var(--tr-fast),
+      border-color var(--tr-fast),
+      box-shadow var(--tr-fast),
+      transform var(--tr-fast);
+
+    &:focus-visible {
+      outline: 2px solid var(--c-green);
+      outline-offset: 2px;
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  .btn--primary {
+    background: var(--c-green);
+    color: #fff;
+
+    &:hover {
+      background: var(--c-green-dark);
+      box-shadow: var(--shadow-btn-hover);
+    }
+  }
+
+  .btn--add-to-cart {
+    align-self: flex-start;
+    min-width: 200px;
+  }
+
+  .btn svg {
+    flex-shrink: 0;
+  }
+}

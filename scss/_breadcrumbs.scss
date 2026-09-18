@@ -1,0 +1,39 @@
+@layer components {
+  .breadcrumbs {
+    font-size: var(--fs-sm);
+    color: var(--c-text-muted);
+    margin-bottom: var(--sp-4);
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--sp-2);
+
+      li {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--sp-2);
+
+        &:not(:last-child)::after {
+          content: '—';
+          color: var(--c-border);
+        }
+      }
+
+      a {
+        color: var(--c-text-muted);
+        transition: color var(--tr-fast);
+
+        &:hover {
+          color: var(--c-green);
+        }
+      }
+
+      [aria-current="page"] {
+        color: var(--c-text);
+        font-weight: 500;
+      }
+    }
+  }
+}

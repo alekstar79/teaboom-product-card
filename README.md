@@ -1,5 +1,9 @@
 # Карточка товара "Ананасовый улун"
 
+![Ананасовый улун](pineapple-oolong.png)
+
+[**LIVE DEMO**](https://alekstar79.github.io/teaboom-product-card)
+
 Вёрстка карточки товара. Чистый HTML5 + SCSS + Vanilla JS, без Bootstrap, jQuery и готовых шаблонов.
 
 ---
